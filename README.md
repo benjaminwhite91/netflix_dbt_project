@@ -34,22 +34,16 @@ I ingest and transform Netflix's global Top 10 weekly data, enriching it with de
 netflix_dbt_project/
 
 ├── dbt_project.yml
-
 ├── load_netflix_to_duckdb.py
-
 ├── models/
-
 │   ├── staging/
 │   │   ├── stg_netflix_weekly.sql
 │   │   └── stg_netflix_weekly.yml
-
 │   ├── marts/
 │   │   ├── mart_netflix_weekly_enriched.sql
 │   │   └── mart_netflix_weekly_enriched.yml
-
 │   └── src/
 │       └── netflix_sources.yml
-
 └── README.md
 
 
