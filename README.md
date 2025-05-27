@@ -2,6 +2,9 @@
 
 This project demonstrates a lightweight analytics pipeline using [dbt](https://www.getdbt.com/) and [DuckDB](https://duckdb.org/) to clean, enrich, and test Netflix's Top 10 weekly TSV data.
 
+ The data is available here! [Netflix Top 10 Portal](https://www.netflix.com/tudum/top10) Scroll across the the Global \ Movies|English buttons and click the second button that's a down arrow. From there, click Lists in the pop-up and click the Country List TSV. 
+ 
+
 It’s designed to highlight:
 - Data modeling with dbt (staging + mart layers)
 - Lightweight local warehousing using DuckDB
