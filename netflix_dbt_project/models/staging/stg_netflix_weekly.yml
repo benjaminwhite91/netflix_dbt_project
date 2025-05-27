@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: stg_netflix_weekly
+    description: 'Cleaned and typed version of Netflix weekly top 10 TSV data'
+    columns:
+      - name: country_name
+        description: 'Name of the country'
+        tests:
+          - not_null
+          #TODO add a reference table for the 93 valid countries
+      
+      - name: country_iso2
+        description: 'ISO country code to abbreviate the country'
+        tests:
+          - not_null
+          #TODO add a reference table for the 93 valid countries
+      - name: week
+        description: 'Week end date the data corresponds to'
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: 'week <= current_date'
+      
+      - name: category
+        description: 'Denoting if the row is for a Film or TV Show'
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Films', 'TV']
+
+      - name: weekly_rank
+        description: 'Weekly popularity rank'
+        tests:
+          - not_null
+          - accepted_range:
+              min: 1
+              max: 10
+      
+      - name: show_title
+        description: 'The title of the Show or Movie'
+        tests:
+          - not_null
+
+      - name: season_title
+        description: 'The title and season of the Show or Movie. N\A for Movies'
+        tests:
+          - not_null
+      
+      - name: cumulative_weeks_in_top_10
+        description: 'Weekly popularity rank'
+        tests:
+          - not_null
+          - accepted_range:
+              min: 1

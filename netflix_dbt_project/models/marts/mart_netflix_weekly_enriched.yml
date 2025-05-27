@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: mart_netflix_weekly_enriched
+    description: "Netflix weekly data with enriched flags like 'first_appeared_this_week'"
+    columns:
+      - name: first_appeared_this_week
+        tests:
+          - not_null
+          - accepted_values:
+                values: [true, false]
+      - name: week_start
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+                expression: 'week <= current_date'

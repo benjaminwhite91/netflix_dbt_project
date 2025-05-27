@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data ingested into DuckDB"
+    tables:
+      - name: netflix_weekly
+        description: "Weekly Netflix Top 10 TSV data from source file"

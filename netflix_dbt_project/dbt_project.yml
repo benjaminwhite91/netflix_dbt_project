@@ -1,0 +1,17 @@
+name: 'netflix_dbt_project'
+version: '1.0'
+config-version: 2
+
+profile: 'netflix_project'  
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_modules"]
+
+models:
+  netflix_dbt_project:
+    +materialized: view
+    staging:
+      +schema: staging
+    marts:
+      +schema: marts
