@@ -44,8 +44,9 @@ netflix_dbt_project/
   |      |       ├── mart_netflix_weekly_enriched.sql 
   |      |       └── mart_netflix_weekly_enriched.yml 
   |      │ 
-  |      └── src/ 
-  |              └── netflix_sources.yml 
+  |      ├── src/ 
+  |      |       └── netflix_sources.yml 
+  |      └── requirements.txt 
   ├── requirements.txt 
   └── README.md </pre>
 
