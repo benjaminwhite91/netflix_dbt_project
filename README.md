@@ -46,7 +46,6 @@ netflix_dbt_project/
   |      │ 
   |      ├── src/ 
   |      |       └── netflix_sources.yml 
-  |      └── requirements.txt 
-  ├── requirements.txt 
+  |      └── requirements.txt
   └── README.md </pre>
 
